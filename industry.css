@@ -1,0 +1,86 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Merriweather:wght@400;700&display=swap');
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: #ffffff;
+}
+
+body {
+  font-family: Nunito, system-ui, -apple-system, sans-serif;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: #E68500; text-decoration: none; }
+a:hover { color: #ffa733; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 1s linear infinite; }
+.blueprint {
+  border: 1px solid #30363d;
+}
+.blueprint .corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #E68500;
+  pointer-events: none;
+}
+.blueprint .corner.tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.blueprint .corner.tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
+.blueprint .corner.bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
+.blueprint .corner.br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+.btn {
+  font-family: Nunito, system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: .5px;
+
+  border: 1px solid rgba(255,255,255,0.35);
+  background: #162466;
+  color: #ffffff;
+
+  cursor: pointer;
+  border-radius: 5px;
+
+  transition: background .15s ease, border-color .15s ease, opacity .15s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: #162466;
+  border-color: rgba(255,255,255,0.7);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.btn-ghost { background: #05070a; }
+
+.btn-secondary {
+  background: #ffffff;
+  border: none;
+  color: #162446;
+}
+
+.btn-secondary:hover {
+  background: #edf3fb;
+}
+
+
+.nav img { user-select: none; }
+
+
+@media (max-width: 1100px) {
+  main > div[style*="grid"] { grid-template-columns: 1fr !important; }
+}
